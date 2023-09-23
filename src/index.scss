@@ -1,0 +1,55 @@
+.brush-table {
+  [brush-border-top="true"] {
+    border-top: 1px solid #b93d06 !important;
+  }
+
+  [brush-border-right="true"] {
+    border-right: 1px solid #b93d06 !important;
+  }
+  [brush-border-left="true"] {
+    border-left: 1px solid #b93d06 !important;
+  }
+  [brush-border-bottom="true"] {
+    border-bottom: 1px solid #b93d06 !important;
+  }
+
+  [data-brush="true"] {
+    background-color: #f5f5f5 !important;
+  }
+
+  .context-menu {
+    position: fixed;
+    display: none;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 8px;
+    z-index: 9999;
+  }
+
+  // antd使用
+  .ant-table-cell {
+    border: 1px solid transparent;
+  }
+
+  .ant-table-cell-row-hover {
+    background: transparent;
+  }
+
+  .ant-table-wrapper .ant-table .ant-table-tbody > tr.ant-table-row:hover > td,
+  .ant-table-wrapper
+    .ant-table
+    .ant-table-tbody
+    > tr
+    > td.ant-table-cell-row-hover {
+    background: transparent;
+  }
+
+  /* 为 fusion 解决设置样式抖动而设置 */
+  .next-table td .next-table-cell-wrapper {
+    border: 1px solid transparent;
+  }
+
+  .next-table-row:hover {
+    background-color: transparent !important;
+  }
+}
