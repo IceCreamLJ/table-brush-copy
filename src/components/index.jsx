@@ -1,13 +1,13 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import AntD from "./antd";
 import Fusion from "./fusion";
 
 const Index = () => {
   return (
-    <Suspense fallback={<div>loading</div>}>
+    <>
       <AntD />
       <Fusion />
-    </Suspense>
+    </>
   );
 };
 
