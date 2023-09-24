@@ -1,11 +1,9 @@
-
 import React, { useEffect } from "react";
 import  { Table } from 'antd';
 import { data } from "./data";
 import "../index.scss";
 
 let originDir = {};
-let count = 0;
 
 const Index = () => {
   const onMouseDown = (event) => {
@@ -92,7 +90,7 @@ const Index = () => {
   };
 
   const renderNodes = (coordinates) => {
-    const nodes = document.querySelectorAll('.ant-table-cell');
+    const nodes = document.querySelectorAll(".ant-table-cell");
     nodes.forEach((item) => {
       const target = item?.getBoundingClientRect();
       clearStyle(item);

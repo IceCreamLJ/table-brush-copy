@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Table } from "@alifd/next";
 import { data } from "./data";
+import '@alifd/next/lib/Table/style';
+
 import "../index.scss";
 
 let originDir = {};

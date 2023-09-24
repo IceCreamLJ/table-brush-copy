@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebapckPlugin = require("html-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.jsx",
@@ -23,12 +24,25 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: { presets: ["@babel/preset-react"] },
+            options: {
+              presets: ["@babel/preset-react"],
+              plugins: [
+                [
+                  "import",
+                  { libraryName: "antd", libraryDirectory: "lib" },
+                  "antd",
+                ],
+                [
+                  "import",
+                  { libraryName: "@alifd/next", libraryDirectory: "lib" },
+                  "@alifd/next",
+                ],
+              ],
+            },
           },
         ],
       },
       {
-        exclude: /node_modules/,
         test: /\.s(a|c)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
@@ -38,6 +52,7 @@ module.exports = {
     extensions: [".js", ".jsx"],
   },
   plugins: [
+    new TerserWebpackPlugin(),
     new HtmlWebapckPlugin({
       template: "./index.html",
     }),
